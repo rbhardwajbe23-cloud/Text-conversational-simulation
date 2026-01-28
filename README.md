@@ -1,58 +1,70 @@
-# Text-conversational-simulation# Text-Based Conversational Simulator (ML Evaluation)
+# Text-Based Conversational Simulator (ML Evaluation)
 
-This project implements a **text-based conversational simulator** to study how conversational parameters affect overall conversation quality.  
-Synthetic conversations are generated using rule-based simulation, and multiple machine learning models are evaluated.
-
----
-
-## 🔧 Simulation Overview
-The simulator models user–bot interactions using linguistic, behavioral, and system-level parameters such as sentiment, message length, response relevance, and context retention.
-
-- Total simulated conversations: **1000**
-- Output variable: **Conversation Quality Score (0–100)**
+## Overview
+This project implements a **text-based conversational simulator** to analyze how conversational parameters influence overall conversation quality.  
+Synthetic data is generated using a rule-based simulation and evaluated using multiple machine learning regression models.
 
 ---
 
-## 🤖 Machine Learning Models
+## Methodology
+A conversational simulator was designed to model user–bot interactions using quantitative features such as sentiment, message length, politeness, response relevance, and context retention.
+
+Each conversation is assigned a **Conversation Quality Score (0–100)** computed using a weighted combination of parameters with added noise to simulate real-world variability.
+
+- Total simulations: **1000**
+- Dataset: `conversation_simulation.csv`
+- Train/Test split: **80/20**
+
+---
+
+## Machine Learning Models
 The following regression models were evaluated:
 
-- Linear Regression
-- Ridge & Lasso Regression
-- Decision Tree
-- Random Forest
-- Gradient Boosting
-- KNN
-- SVR
-- MLP
-- Extra Trees
+- Linear, Ridge, Lasso  
+- Decision Tree  
+- Random Forest  
+- Gradient Boosting  
+- KNN  
+- SVR  
+- MLP  
+- Extra Trees  
+
+**Evaluation metrics:** Mean Squared Error (MSE) and R² Score.
 
 ---
 
-## 📊 Results & Graphs
+## Results
 
-### 🔹 Model Performance (R² Score)
-<img width="630" height="470" alt="image" src="https://github.com/user-attachments/assets/ffa3cd05-e4ad-4766-9f21-33fe6a418b82" />
+### Model Performance (R² Score)
+<img width="630" height="470" alt="image" src="https://github.com/user-attachments/assets/ff840c58-83bc-4f23-8e20-09adb69ecd28" />
 
-### 🔹 Model Performance (MSE)
-<img width="630" height="470" alt="image" src="https://github.com/user-attachments/assets/6fd49b84-1eeb-43c4-82b5-f5d4693d867e" />
+### Model Performance (MSE)
+<img width="630" height="470" alt="image" src="https://github.com/user-attachments/assets/39704164-3042-4834-9a4c-a07773b41dfd" />
 
-### 🔹 Feature Importance
-<img width="630" height="470" alt="image" src="https://github.com/user-attachments/assets/7880f7d3-0fe4-429e-b7b2-436828eaad5e" />
+### Feature Importance
+<img width="630" height="470" alt="image" src="https://github.com/user-attachments/assets/1bb2f68a-0c8e-4894-bdf4-b62d6ecec538" />
 
-### 🔹 Actual vs Predicted Quality Score
-<img width="629" height="470" alt="image" src="https://github.com/user-attachments/assets/0c564a40-1aa1-4ec9-a21b-1eca9256e2d1" />
-
----
-
-## 🏆 Conclusion
-Linear regression achieved the best performance due to the predominantly linear nature of the simulated data, while ensemble methods such as Gradient Boosting also performed strongly under noisy conditions.
+### Actual vs Predicted Quality
+<img width="629" height="470" alt="image" src="https://github.com/user-attachments/assets/f8c0d41b-d21a-4eec-b08d-60980fe8e2af" />
 
 ---
 
-## 👨‍🎓 Author
+## Key Observations
+- Linear Regression achieved the best performance due to the predominantly linear nature of the simulated system.
+- Ensemble models (Gradient Boosting, Random Forest) performed robustly under noise.
+- Response relevance, sentiment, and context retention were the most influential parameters.
+
+---
+
+## Conclusion
+The results demonstrate that simulation-based conversational modeling is effective for studying dialogue quality and comparing ML models without requiring real user data.
+
+---
+
+## Author
 **Rishi Bhardwaj**
 
 ---
 
-## 📄 License
+## License
 Academic and educational use only.
